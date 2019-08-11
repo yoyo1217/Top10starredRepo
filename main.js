@@ -1,6 +1,7 @@
 const xlabels = [];
 const ylabels = [];
 chart();
+Chart.defaults.global.legend.display = false;
 
 async function chart() {
   await getRepo();
@@ -11,7 +12,6 @@ async function chart() {
       labels: xlabels,
       datasets: [
         {
-          label: "stars",
           data: ylabels,
           backgroundColor: [
             "rgba(75, 192, 192, 0.2)",
@@ -65,8 +65,5 @@ async function getRepo() {
     anchor.target = "_blank";
     anchor.href = i.html_url;
     anchor.textContent = nameRepo;
-
-    // Repos.appendChild(anchor);
-    // Repos.appendChild(document.createElement("br"));
   });
 }
